@@ -20,7 +20,7 @@ Date: Friday, September 18, 2026
 
 Time: 9:00 pm
 
-Venue: One Thousand Museum, Miami
+Venue: One Thousand Museum, Miami Beach, Apt 4802
 
 Access: Invite only, limited capacity
 
@@ -30,11 +30,17 @@ The event is invite only, so the site must not sell tickets. Priorities in order
 
 ## Brand direction
 
-Taken from the event flyer. Warm off-white paper background with visible grain and texture. Ochre gold as the single accent. Near-black charcoal for the silhouette and for headline type. Halftone dot fields and a faint gold line drawing of the Miami skyline along the bottom. Type pairs a condensed uppercase sans for names and labels with a rough handwritten script for the I Love Afro House lockup. The feel is a printed riso poster or zine, not a glossy club flyer. Keep it restrained: paper, gold, charcoal, and nothing else.
+Dark luxury. Chosen direction for Session 002.
+
+Deep near-black charcoal ground with subtle film grain. Ochre gold as the single accent — type, halftone highlights, skyline line art, and frame details. Near-black silhouettes with gold halftone shading. Type pairs a condensed uppercase sans for names and labels with a handwritten script for the I Love Afro House lockup. Faint gold Miami skyline along the bottom. Thin gold corner brackets where framing is needed.
+
+The feel is exclusive and editorial — Shimza-level premium, not glossy club flyer. Keep it restrained: black, gold, charcoal, and soft off-white for secondary type only.
+
+Reference assets live in `assets/` and `site/assets/`. Paper/riso variant exists but is not the default.
 
 ## Status
 
-Early planning. No stack has been chosen yet. Ask before scaffolding a framework or adding build tooling.
+Static HTML/CSS site preview in `site/`. No framework or build tooling yet. Ask before adding either.
 
 ## Ground rules
 
@@ -68,4 +74,10 @@ Exact venue address and any door or arrival instructions.
 
 ## Commands
 
-To be filled in once the stack exists: install, dev, build, test.
+Preview the site from `site/`:
+
+```bash
+cd site && python3 -m http.server 8080
+```
+
+Then open http://localhost:8080/

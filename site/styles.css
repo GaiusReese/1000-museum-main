@@ -1,0 +1,350 @@
+:root {
+  --black: #0a0a0b;
+  --charcoal: #141416;
+  --gold: #c9a227;
+  --gold-soft: #a8841f;
+  --gold-muted: #8a7020;
+  --white-soft: #e8e4dc;
+  --frame: rgba(201, 162, 39, 0.55);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--black);
+  color: var(--white-soft);
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  z-index: 1;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.65) 100%);
+  z-index: 1;
+}
+
+.site-header,
+main,
+.site-footer {
+  position: relative;
+  z-index: 2;
+}
+
+.site-header {
+  padding: 2.5rem 1.5rem 1rem;
+  text-align: center;
+}
+
+.session-label {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  color: var(--gold-muted);
+}
+
+.lockup {
+  margin: 0.75rem 0 0;
+  font-family: "Caveat", cursive;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  padding: 1rem 1.5rem 3rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.frame {
+  position: relative;
+  padding: 1.25rem;
+}
+
+.frame::before,
+.frame::after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-color: var(--frame);
+  border-style: solid;
+}
+
+.frame::before {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.frame::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.frame--hero::before,
+.frame--hero::after {
+  width: 2rem;
+  height: 2rem;
+}
+
+.frame--section {
+  background: linear-gradient(180deg, rgba(20, 20, 22, 0.9), rgba(10, 10, 11, 0.95));
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  padding: 1.75rem 1.5rem;
+}
+
+.hero-flyer {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.hero-copy {
+  text-align: center;
+}
+
+.headliner {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4rem, 16vw, 6.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+}
+
+.support {
+  margin: 0.5rem 0 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  color: var(--white-soft);
+}
+
+.event-meta {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.date,
+.time,
+.venue {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.12em;
+}
+
+.date,
+.venue {
+  color: var(--gold-soft);
+  font-size: 1.25rem;
+}
+
+.time {
+  color: var(--gold-muted);
+  font-size: 1rem;
+}
+
+.access {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+}
+
+.details,
+.lineup,
+.rsvp,
+.notify {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+
+.lineup-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.lineup-list li {
+  display: grid;
+  gap: 0.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+.lineup-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.role {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+}
+
+.artist {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: var(--white-soft);
+}
+
+.rsvp-note {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: rgba(232, 228, 220, 0.65);
+}
+
+.rsvp-form,
+.notify-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+label {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+}
+
+input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--white-soft);
+  font: inherit;
+}
+
+input::placeholder {
+  color: rgba(232, 228, 220, 0.35);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.35);
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.25rem;
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--gold);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+button:hover {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.site-footer {
+  padding: 2rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.skyline {
+  width: min(100%, 900px);
+  height: auto;
+  margin: 0 auto 1.5rem;
+  color: var(--gold-muted);
+  opacity: 0.45;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    max-width: 980px;
+    gap: 3rem;
+  }
+
+  .hero-copy {
+    text-align: left;
+  }
+
+  .hero-flyer {
+    max-width: none;
+  }
+
+  .details,
+  .lineup,
+  .rsvp,
+  .notify {
+    max-width: 560px;
+  }
+}
